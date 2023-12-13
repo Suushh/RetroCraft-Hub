@@ -11,92 +11,9 @@ const firebaseConfig = {
   };
     firebase.initializeApp(firebaseConfig);
     
-    const auth = firebase.auth()
-    const database = firebase.database()
     
-    
-    function register () {
-     
-      email = document.getElementById('email').value
-      password = document.getElementById('password').value
-      full_name = document.getElementById('full_name').value
-     
-    
-  
-      if (validate_email(email) == false || validate_password(password) == false) {
-        alert('Email or Password is Outta Line!!')
-        return
-        
-      }
-      
-     
-      
-      auth.createUserWithEmailAndPassword(email, password)
-      .then(function() {
-        
-        var user = auth.currentUser
-    
-        
-        var database_ref = database.ref()
-    
-        
-        var user_data = {
-          email : email,
-          full_name : full_name,
-         password : password,
-         
-        }
-    
-        
-        database_ref.child('users/'+ auth.currentUser.uid).set(user_data)
-    
-        // DOne
-        alert('User Created!!')
-      })
-      .catch(function(error) {
-        // Firebase will use this to alert of its errors
-        var error_code = error.code
-        var error_message = error.message
-    
-        alert(error_message)
-      })
-    }
-    
-    // Set up our login function
-    function login () {
-      
-      email = document.getElementById('email').value
-      password = document.getElementById('password').value
-      full_name=document.getElementById('full_name').value
-    
-      
-      if (validate_email(email) == false || validate_password(password) == false) {
-        alert('Email or Password is Outta Line!!')
-        return
-       
-      }
-    
-      auth.signInWithEmailAndPassword(email, password)
-      .then(function() {
-        // Declare user variable
-        var user = auth.currentUser
-    
-        // Add this user to Firebase Database
-        var database_ref = database.ref()
-    
-        
-        // DOne
-        alert('User Logged In!!')
-    
-      })
-      .catch(function(error) {
-        // Firebase will use this to alert of its errors
-        var error_code = error.code
-        var error_message = error.message
-    
-        alert(error_message)
-      }) 
-    }
+    const database = firebase.database();   
+      //login function to verify database
     function checker() {
       var email= document.getElementById("email").value;
       var password= document.getElementById("password").value;
@@ -112,9 +29,6 @@ const firebaseConfig = {
           
             const user = snapshot.val();
             var storedPassword = user[Object.keys(user)[0]].password;
-            console.log(user);
-            console.log(storedPassword);
-            console.log(password);
            
   
   
@@ -134,25 +48,4 @@ const firebaseConfig = {
    }
   
     
-    // Validate Functions
-    function validate_email(email) {
-      expression = /^[^@]+@\w+(\.\w+)+\w$/
-      if (expression.test(email) == true) {
-        // Email is good
-        return true
-      } else {
-        // Email is not good
-        return false
-      }
-    }
     
-    function validate_password(password) {
-      // Firebase only accepts lengths greater than 6
-      if (password < 6) {
-        return false
-      } else {
-        return true
-      }
-    }
-    
-   
