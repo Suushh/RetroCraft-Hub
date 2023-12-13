@@ -1,7 +1,7 @@
 html, body {
     width: 100%;
     height: 100%;
-    background: -webkit-linear-gradient(25deg, #FFBE0B, #FB5607, #FF006E, #8338EC, #3A86FF);
+    background: #fffeb2;
 
     display: flex;
     justify-content: center;
@@ -24,7 +24,7 @@ html, body {
     width: 100%;
     height: 100%;
 
-    background-color: #370617;
+    background-color: #028391;
     box-shadow: 0 0 50px -20px #000;
     border-radius: 2%;
 
@@ -45,21 +45,21 @@ html, body {
     padding-top: 30px;
 
     border-bottom: 1px solid transparent;
-    border-image: -webkit-linear-gradient(25deg, #FFBE0B, #FB5607, #FF006E, #8338EC, #3A86FF) 20;
-    background: #000;
+    
+    background:#054249;
 }
 
 #form_header {
     display: inline-block;
-    font-size: 15px;
-    font-family: Bowlby One SC;
-    font-weight: 900;
+    font-size: 19px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 1000;
     text-transform: uppercase;
     letter-spacing: 1px;
 
 
-    background: -webkit-linear-gradient(25deg, #FFBE0B, #FB5607, #FF006E, #8338EC, #3A86FF);
-      -webkit-background-clip: text;
+    background: #001219;
+     -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 }
 
@@ -91,28 +91,29 @@ input {
     padding-left: 10px;
     margin-bottom: 20px;
 
-    background: #000;
-    font-family: Montserrat;
-    font-weight: 500;
-    color: #fff;
-    font-size: 12px;
+    background: #cac797;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 800;
+    color: black;
+    font-size: 16px;
 
     border-bottom: 2px solid transparent;
     border-top-left-radius: 2%;
     border-top-right-radius: 2%;
-    border-image: -webkit-linear-gradient(25deg, #FFBE0B, #FB5607, #FF006E, #8338EC, #3A86FF) 1;
+    border-image: #57542b;
 }
 
 #button_container {
     width: 100%;
     height: 10%;
 
-    background-image: linear-gradient(80deg, #FFBE0B, #FB5607 50%, #FF006E 50%, #8338EC);
-    color: #fff;
+    background-color:#054249;
+    color: #001219;
+    float:right;
 
-    float: left;
+    text-align: center;
 
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 #button_container button {
@@ -123,10 +124,11 @@ input {
     background: transparent;
     color: inherit;
 
-    font-family: Montserrat;
+    font-family:Georgia, 'Times New Roman', Times, serif;
     letter-spacing: 1px;
     font-weight: 900;
-    font-size: 12px;
+    font-size: 25px;
+    
 
     cursor: pointer;
 
