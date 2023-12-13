@@ -18,7 +18,7 @@ const firebaseConfig = {
       var email= document.getElementById("email").value;
       var password= document.getElementById("password").value;
       var full_name= document.getElementById("full_name").value;
-  
+            
   
       const usersRef = firebase.database().ref("users");
   
@@ -36,15 +36,24 @@ const firebaseConfig = {
            
   
             if ((storedPassword - password)===0 ) {
-              alert('Congrats data found in database and you are logged in !!!')
+             
+              window.location.href = "main.html";
+
             } else {
-              alert('oops wrong email or password');
+              alert('oops wrong  password');
             }
           })
           .catch(error => {
             alert("Email not found");
             console.error("Error fetching user data:", error);
           });
+   }
+
+
+   function register () {
+     
+   
+
    }
   
     
