@@ -51,7 +51,7 @@ html, body {
 
 #form_header {
     display: inline-block;
-    font-size: 19px;
+    font-size: 25px;
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight: 1000;
     text-transform: uppercase;
@@ -127,7 +127,7 @@ input {
     font-family:Georgia, 'Times New Roman', Times, serif;
     letter-spacing: 1px;
     font-weight: 900;
-    font-size: 25px;
+    font-size: 35px;
     
 
     cursor: pointer;
