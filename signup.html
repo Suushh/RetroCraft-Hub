@@ -1,41 +1,38 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Authentication</title>
-    <link rel="stylesheet" type="text/css" href="signup.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Authentication</title>
+  <link rel="stylesheet" type="text/css" href="signup.css">
 </head>
 <body>
 
 <form id="authForm">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" autocomplete="on" required>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required>
 
-    <label for="profilePicture">Profile Picture:</label>
-    <input type="file" id="profilePicture" name="profilePicture">
+  <label for="profilePicture">Profile Picture:</label>
+  <input type="file" id="profilePicture" name="profilePicture">
 
-    <label for="userType">I want to:</label>
-    <select id="userType" name="userType" required>
-        <option value="hire">Hire</option>
-        <option value="freelancer">Be a Freelancer</option>
-    </select>
+  <label for="userType">I want to:</label>
+  <select id="userType" name="userType" required>
+    <option value="hire">Hire</option>
+    <option value="freelancer">Be a Freelancer</option>
+  </select>
 
-    <button type="submit" onclick =main_register() >Sign Up</button>
+  <button type="submit" id="signupButton">Sign Up</button>
 </form>
-
-
-</body>
-
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- Add SDKs for Firebase products that you want to use -->
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
 <script src="signup.js"></script>
+</body>
 </html>
