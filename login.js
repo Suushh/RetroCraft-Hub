@@ -1,30 +1,30 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyC5NU9gRsViq-JwyVt6VWfXZa8mKGOrXzg",
-    authDomain: "login-database-df773.firebaseapp.com",
-    databaseURL: "https://login-database-df773-default-rtdb.firebaseio.com",
-    projectId: "login-database-df773",
-    storageBucket: "login-database-df773.appspot.com",
-    messagingSenderId: "30734586988",
-    appId: "1:30734586988:web:1daefe6c21b36afbb97449",
-    measurementId: "G-9FN2N2RVN6"
-  };
+  apiKey: "AIzaSyDAYyEyaQhiZGd-7lRBYNbTXv_8uc_S1-8",
+  authDomain: "retro-craft-hub.firebaseapp.com",
+  databaseURL: "https://retro-craft-hub-default-rtdb.firebaseio.com",
+  projectId: "retro-craft-hub",
+  storageBucket: "retro-craft-hub.appspot.com",
+  messagingSenderId: "668766099424",
+  appId: "1:668766099424:web:f418f8e06bb13548bd3d85",
+  measurementId: "G-KREF1HV8PX"
+};
     firebase.initializeApp(firebaseConfig);
     
     
     const database = firebase.database();   
       //login function to verify database
     function checker() {
-      var email= document.getElementById("email").value;
+      var username= document.getElementById("username").value;
       var password= document.getElementById("password").value;
-      var full_name= document.getElementById("full_name").value;
-            
+      
   
       const usersRef = firebase.database().ref("users");
   
   
   
-      usersRef.orderByChild("email").equalTo(email).once("value")
+      usersRef.orderByChild('username').equalTo(username).once("value")
           .then(snapshot => {
           
             const user = snapshot.val();
