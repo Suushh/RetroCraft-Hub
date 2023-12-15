@@ -29,16 +29,20 @@ const firebaseConfig = {
           
             const user = snapshot.val();
             var storedPassword = user[Object.keys(user)[0]].password;
-           
+           var userType= user[Object.keys(user)[0]].userType;
   
   
             
            
   
             if ((storedPassword - password)===0 ) {
+              if(userType === 'hire') {
              
-              window.location.href = "main.html";
-
+              window.location.href = "HirePOV.html";
+              }
+              else if(userType === "freelancer") {
+                window.location.href ="FreelancePOV.html";
+              }
             } else {
               alert('oops wrong  password');
             }
@@ -50,11 +54,4 @@ const firebaseConfig = {
    }
 
 
-   function register () {
-     
-   
-
-   }
   
-    
-    

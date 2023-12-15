@@ -36,7 +36,8 @@ measurementId: "G-KREF1HV8PX"
         databaseRef.child(username).set({
           password: password,
           profilePicture: imageUrl,
-          userType: userType
+          userType: userType,
+          username: username
         }).then(function() {
           alert('Congrats data stored in database');
           console.log('Data stored in the realtime database!');
