@@ -17,12 +17,17 @@ measurementId: "G-KREF1HV8PX"
   var databaseRef = database.ref('/users');
 
   function main_register(event) {
-    event.preventDefault(); // Prevents the default form submission behavior
 
+    event.preventDefault(); 
+    // Prevents the default form submission behavior
+   
+    
     var username = document.getElementById("authForm").elements["username"].value;
     var password = document.getElementById("authForm").elements["password"].value;
     var userType = document.getElementById("authForm").elements["userType"].value;
     var profilePicture = document.getElementById('authForm').elements["profilePicture"].files[0];
+    var description=document.getElementById('authForm').elements["description"].value;
+  
 
     console.log('called this function successfully');
 
@@ -37,9 +42,17 @@ measurementId: "G-KREF1HV8PX"
           password: password,
           profilePicture: imageUrl,
           userType: userType,
-          username: username
+          username: username,
+          description : description
         }).then(function() {
-          alert('Congrats data stored in database');
+          if(userType==='hire')
+          {
+            window.location.href="HirePOV.html";
+          }
+          else if(userType==='freelancer')
+          {
+            window.location.href="FreelancePOV.html";
+          }
           console.log('Data stored in the realtime database!');
         }).catch(function(error) {
           console.error('Error storing data in the realtime database:', error.message);

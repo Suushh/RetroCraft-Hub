@@ -19,11 +19,15 @@
   <input type="file" id="profilePicture" name="profilePicture">
 
   <label for="userType">I want to:</label>
-  <select id="userType" name="userType" required>
+  <select id="userType" name="userType" required onchange="toggleTextBox()">
     <option value="hire">Hire</option>
-    <option value="freelancer">Be a Freelancer</option>
+    <option value="freelancer">Be a Freelancer</option>  
   </select>
-
+  <div id="textBoxContainer" style="display: none;">
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="extraInfo">
+  </div>
+  
   <button type="submit" id="signupButton">Sign Up</button>
 </form>
 
@@ -33,6 +37,20 @@
 <!-- Add SDKs for Firebase products that you want to use -->
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+<script>
+  function toggleTextBox() {
+    var userType = document.getElementById("userType");
+    var textBoxContainer = document.getElementById("textBoxContainer");
+  
+    if (userType.value === "freelancer") {
+      textBoxContainer.style.display = "block";
+    } else {
+      textBoxContainer.style.display = "none";
+    }
+  }
+</script>
+
 <script src="signup.js"></script>
 </body>
 </html>
