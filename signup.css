@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #fffeb2;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -9,11 +9,12 @@ body {
 }
 
 #authForm {
-    background-color: #ffffff;
+    background-color: #028391;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 label {
@@ -31,14 +32,15 @@ button {
 }
 
 button {
-    background-color: #3498db;
-    color: #ffffff;
+    background-color: #001219;
+    color: #48e7f8;
     border: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 10px;
     border-radius: 4px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #217dbb;
+    background-color: #001219;
 }
