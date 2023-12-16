@@ -16,7 +16,7 @@
   <input type="password" id="password" name="password" required>
 
   <label for="profilePicture">Profile Picture:</label>
-  <input type="file" id="profilePicture" name="profilePicture">
+  <input type="file" id="profilePicture" name="profilePicture" required>
 
   <label for="userType">I want to:</label>
   <select id="userType" name="userType" required onchange="toggleTextBox()">
@@ -24,8 +24,8 @@
     <option value="freelancer">Be a Freelancer</option>  
   </select>
   <div id="textBoxContainer" style="display: none;">
-    <label for="description">Description:</label>
-    <input type="text" id="description" name="extraInfo">
+    <label for="description" >Description/Previous projects:</label>
+    <input type="text" id="description" name="extraInfo" required>
   </div>
   
   <button type="submit" id="signupButton">Sign Up</button>
