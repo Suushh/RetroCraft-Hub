@@ -14,6 +14,7 @@ const database = firebase.database();
 const storageRef = firebase.storage().ref();
 var databaseRef = database.ref('/users');
 var getusername = localStorage.getItem("loggedInUsername");
+var isVisible = datacontainer.style.display !== "none";
 function profileshow() {
     var getusername = localStorage.getItem("loggedInUsername");
     const usersRef = firebase.database().ref("users");
@@ -35,7 +36,7 @@ function profileshow() {
            
            <img src="${profilePictureUrl}" alt="Profile Picture" style= "width : 200px height :200px">
          `;
-
+         
         });
 }
 // Function to create and add jobs to the database

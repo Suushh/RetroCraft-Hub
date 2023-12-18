@@ -28,6 +28,7 @@ const firebaseConfig = {
           .then(snapshot => {
           
             const user = snapshot.val();
+            console.log(user);
             var storedPassword = user[Object.keys(user)[0]].password;
            var userType= user[Object.keys(user)[0]].userType;
            localStorage.setItem("loggedInUsername",username);
