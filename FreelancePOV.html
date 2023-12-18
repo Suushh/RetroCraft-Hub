@@ -3,23 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Your Website</title>
+    <!-- Add your CSS file link here -->
+    <link rel="stylesheet" href="./FreelancePOV.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+
 </head>
 <body>
-   
-    <button type="=button" id="profileButton" onclick="profileshow()"> profileButton</button>
-    <div id="datacontainer">This is Data from the Firebase database</div>
+    <!-- Your existing content -->
 
+    <!-- Add the following HTML for the search bar -->
 
-
-
-</body>
-<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-
+    <div class="header">
+        <img id="logo" src="./logo.png" alt="LOGO" width="340" height="250">
+        <div class="navigation-buttons">
+            <button class="nav-button">Experience</button>
+            <button class="nav-button">Pay Range</button>
+            <button class="nav-button">Category</button>
+        </div>
+        
+        <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="What job are you looking for...">
+        <button id="searchButton" onclick="performSearch()">Search</button>
+        </div>
+       
+    <!-- Add your JavaScript file link here -->
     
-<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+        
+    </div>
+    <div class="post-container">
+        <!-- Post 1 -->
+        <div class="post-box">
+            <p>Producer-1</p>
+            <p>searching for video editor</p>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="post-box">
+            <p>Post 2 Content</p>
+        </div>
+        <button id="profileButton" class ="profile-button" onclick="profileshow()">Profile</button>
+        <div id="datacontainer" class="data-box" style="color : goldenrod">This is data from database</div>
+        <div class="settings-button">
+            <span>Settings</span>
+        </div>
+        
+        <script src="./FreelancePOV.js"></script>
+    
+</body>
 
 
-<script src="FreelancePOV.js"></script>
 </html>

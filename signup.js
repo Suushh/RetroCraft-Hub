@@ -45,8 +45,10 @@ measurementId: "G-KREF1HV8PX"
           username: username,
           description : description
         }).then(function() {
+          localStorage.setItem("loggedInUsername",username);
           if(userType==='hire')
           {
+
             window.location.href="HirePOV.html";
           }
           else if(userType==='freelancer')
