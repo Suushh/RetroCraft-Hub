@@ -8,10 +8,40 @@
 <body>
     <button type="=button" id="profileButton" onclick="profileshow()"> profileButton</button>
     <div id="datacontainer"></div>
-    <button type="button" id="jobsbutton" onclick="createJob()">Button to create jobs</button>
+    <button type="button" id="jobsbutton" onclick="Toggle()">Button to create jobs</button>
     <div id="dataontainer"></div>
 
+    <div class="Form" id="Form" style="display: none" >
+        <form id="Job">
+            <label>Experience(in years)</label>
+            <input id="experience" type="number" required/>
+            <label>Pay Grade</label>
+            <input type="text" id="payGrade" required/>
+            <label>Job Title</label>
+            <input type="text" id="title" required/>
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </div>
+
 </body>
+<Script>
+    var count=0;
+function Toggle()
+{
+    
+    if(count%2===0)
+    {
+        Form.style.display="block";
+        count=count+1;
+        console.log(count);
+    }
+    else {
+        Form.style.display="none";
+        count=count+1;
+    }
+
+}
+</Script>
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 
     

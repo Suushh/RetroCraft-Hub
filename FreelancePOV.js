@@ -1,6 +1,10 @@
 // Check if firebase is already initialized
 
   // Your script code here
+  document.addEventListener("DOMContentLoaded", function() {
+    // Call the function here
+    showjobs();
+});
 
 if (!firebase.apps.length) {
   const firebaseConfig = {
@@ -21,6 +25,11 @@ const database =  firebase.app().database();
 const storageRef = firebase.storage().ref();
 const databaseRef = database.ref('/users');
 var getusername = localStorage.getItem("loggedInUsername");
+var databaseRef1 = database.ref('/jobs');
+var items = databaseRef1.items;
+  
+
+
 
 function profileshow() {
   var getusername = localStorage.getItem("loggedInUsername");
@@ -52,5 +61,47 @@ function profileshow() {
 
 function showjobs() {
   // Implement your logic to show jobs
+  // databaseRef1.once('value').then(function(snapshot){
+  //   var jobData= snapshot.val();
+  //   // var details= JSON.stringify(jobData,null,2);
+  //   // document.getElementById("box").innerText=details;
+  //   var displayString = '';
+
+  //   for (var key in jobData) {
+  //       if (jobData.hasOwnProperty(key)) {
+  //           var item = jobData[key];
+  //           displayString += "Key: " + key + "\n";
+  //           displayString += "Experience: " + item.experience + "\n";
+  //           displayString += "Pay Grade: " + item.payGrade + "\n";
+  //           displayString += "Producer/Username: " + (item.producerUsername || item.username) + "\n";
+  //         console.log(displayString); }
+  //         document.getElementById("box").innerText=displayString;
+          
+  
+
+        // Get the data from Firebase
+        databaseRef1.once('value').then(function(snapshot) {
+            // Get the data as an object
+            var jobData = snapshot.val();
+
+            // Display job titles with clickable links
+            var jobTitlesDiv = document.getElementById('box');
+
+            for (var key in jobData) {
+                if (jobData.hasOwnProperty(key)) {
+                    var item = jobData[key];
+// Create a URL for each job
+                    var jobURL = "job-pg.html?id=" + encodeURIComponent(key);
+
+                    // Display the job title as a clickable link
+                    var jobLink = document.createElement('a');
+                    jobLink.href = jobURL;
+                    jobLink.textContent = item.title;
+                    jobLink.style.display = 'block'; // Add some spacing between links
+                    jobTitlesDiv.appendChild(jobLink);}
+
+        }
+        
+  });
 }
 
