@@ -4,24 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./HirePOV.css">
+    
 </head>
 <body>
-    <button type="=button" id="profileButton" onclick="profileshow()"> profileButton</button>
+    <img id="logo" src="./logo.png" alt="LOGO" width="300" height="200">
+    <p>
+    <h1>Innovate, Elevate, Employ: Together, We Make Careers!</h1>
+</p>
+    <div class="buttons">
+    <button type="=button" id="profileButton" onclick="profileshow()"> Profile</button>
+    <span id="datacontainer" class="data-box" ></span>
+    <button type="=button" id="settingButton" > Settings </button>
     <div id="datacontainer"></div>
-    <button type="button" id="jobsbutton" onclick="Toggle()">Button to create jobs</button>
+    
+</div>
+    <button type="button" id="jobsbutton" onclick="Toggle()">Create Job </button>
     <div id="dataontainer"></div>
+    
+    
 
-    <div class="Form" id="Form" style="display: none" >
-        <form id="Job">
-            <label>Experience(in years)</label>
+    <div class="Form" id="Form" style="display: none; margin-right: 230px;" >
+        <form id="Job" >
+            <label class="exp-input" style="margin-right: 30px;">  Experience(in years) </label>
+            <br>
             <input id="experience" type="number" required/>
-            <label>Pay Grade</label>
+            <br>
+            <label class="pay-input" style="margin-right: 70px;">Pay Grade</label>
+            <br>
             <input type="text" id="payGrade" required/>
-            <label>Job Title</label>
+            <br>
+            <label class="job-input">Job Title</label>
+            <br>
             <input type="text" id="title" required/>
+            <br>
             <button type="submit" id="submit">Submit</button>
         </form>
     </div>
+   
 
 </body>
 <Script>
